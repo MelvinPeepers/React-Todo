@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: [
+      toDos: [
         {
           task: "Do dishes",
           id: 1,
@@ -19,15 +19,16 @@ class App extends React.Component {
           id: 2,
           completed: false
         }
-      ];
-      todo: " "
-    }
+      ],
+      toDo: ""
+    };
   }
 
   render() {
     return (
       <div className="container">
         <h1>My Todo List!</h1>
+        <TodoList toDos={this.state.toDos} />
       </div>
     );
   }
