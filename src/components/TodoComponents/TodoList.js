@@ -9,7 +9,7 @@ function TodoList(props) {
       <div className="todo-list">
         { props.todolist.map( (item) => {
           return (
-            <Todo listItem={item} />
+            <Todo listItem={item} key={item.id} />
           );
         })}
       </div>

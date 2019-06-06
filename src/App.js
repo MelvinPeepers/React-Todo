@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from './components/TodoComponents/TodoForm';
 
 
 const todolist = [
@@ -15,7 +16,7 @@ const todolist = [
   },
   {
     task: "Take out garbage",
-    id: 1,
+    id: 3,
     completed: false
   },
 ];
@@ -35,8 +36,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="header">
-          <h1>My Todo List!</h1>
+          <h1>Melvin's Super Fantastical Fun List!</h1>
           <TodoList todolist={this.state.currentToDoList} />
+          <TodoForm />
         </div>
       </div>
     );
