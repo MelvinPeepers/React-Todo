@@ -1,5 +1,18 @@
 import React from 'react';
-import TodoList from "./components/TodoComponents/TodoList";
+
+
+const todolist = [
+  {
+    task: "Do dishes",
+    id: 1,
+    completed: false
+  },
+  {
+    task: "Make lunches",
+    id: 2,
+    completed: false
+  }
+];
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -8,30 +21,23 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      toDos: [
-        {
-          task: "Do dishes",
-          id: 1,
-          completed: false
-        },
-        {
-          task: "Make lunches",
-          id: 2,
-          completed: false
-        }
-      ],
-      toDo: ""
+      currentToDoList: todolist
     };
   }
 
   render() {
     return (
-      <div className="container">
-        <h1>My Todo List!</h1>
-        <TodoList toDos={this.state.toDos} />
+      <div className="App">
+        <div className="header">
+          <h1>My Todo List!</h1>
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+// Display the items in the Todo List.
+// Add items to the list.
+// Check items off the list.
