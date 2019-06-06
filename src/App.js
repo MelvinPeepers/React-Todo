@@ -1,17 +1,23 @@
 import React from 'react';
+import TodoList from './components/TodoComponents/TodoList';
 
 
 const todolist = [
   {
-    task: "Do dishes",
+    task: "Make lunches",
     id: 1,
     completed: false
   },
   {
-    task: "Make lunches",
+    task: "Do Dishes",
     id: 2,
     completed: false
-  }
+  },
+  {
+    task: "Take out garbage",
+    id: 1,
+    completed: false
+  },
 ];
 
 class App extends React.Component {
@@ -30,6 +36,7 @@ class App extends React.Component {
       <div className="App">
         <div className="header">
           <h1>My Todo List!</h1>
+          <TodoList todolist={this.state.currentToDoList} />
         </div>
       </div>
     );
