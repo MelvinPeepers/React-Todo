@@ -1,6 +1,9 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import './components/TodoComponents/normalize.css';
+import './components/TodoComponents/Todo.css';
+
 
 
 const todolist = [
@@ -32,13 +35,25 @@ class App extends React.Component {
     };
   }
 
+  addItem = (newItem)  => {
+    const newTodoItem = {
+      task: newItem,
+      id: Date.now(),
+      completed: false
+    }
+
+    this.setState({currentToDoList: [...this.state.currentToDoList, newTodoItem]})
+  }
+
   render() {
     return (
       <div className="App">
         <div className="header">
           <h1>Melvin's Super Fantastical Fun List!</h1>
+        </div>
+        <div className="toDo-List">
           <TodoList todolist={this.state.currentToDoList} />
-          <TodoForm />
+          <TodoForm addNewItem={this.addItem} />
         </div>
       </div>
     );

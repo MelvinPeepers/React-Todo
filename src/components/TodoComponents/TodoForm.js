@@ -3,6 +3,7 @@ import React from 'react';
 class TodoForm extends React.Component {
     constructor(props) {
         super(props);
+        // console.log("LIST ITEM PROPS", props)
         this.state = {
             listItem: ''
         }
@@ -12,9 +13,15 @@ class TodoForm extends React.Component {
         this.setState({listItem: event.target.value})
     }
 
+    submitHandler = event => {
+        event.preventDefault()
+        // console.log("LIST ITEM PROPS", this.props)
+        this.props.addNewItem(this.state.listItem)
+    }
+
     render() {
         return (
-            <form>
+            <form onSubmit={this.submitHandler}>
                 <input value={this.state.listItem} 
                 placeholder="New Item" 
                 type="text" 
