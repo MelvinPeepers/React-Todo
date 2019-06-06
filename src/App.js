@@ -45,6 +45,6 @@ class App extends React.Component {
 
 export default App;
 
-// Display the items in the Todo List.
+// Display the items in the Todo List. - DONE 
 // Add items to the list.
 // Check items off the list.
