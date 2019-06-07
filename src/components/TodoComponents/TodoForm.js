@@ -15,9 +15,13 @@ class TodoForm extends React.Component {
 
     submitHandler = event => {
         event.preventDefault()
-        console.log("LIST ITEM PROPS", this.props)
-        console.log("hello");
+        // console.log("LIST ITEM PROPS", this.props)
         this.props.addNewItem(this.state.listItem)
+    }
+
+    clearHandler = event => {
+        event.preventDefault()
+        this.props.clearCompleted();
     }
 
     render() {
@@ -30,7 +34,7 @@ class TodoForm extends React.Component {
                 />
 
                 <button>Add</button>
-                <button>Clear All</button>
+                <button onClick={this.clearHandler}>Clear Completed</button>
             </form>
         );
     }

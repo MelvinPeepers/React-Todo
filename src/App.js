@@ -9,19 +9,14 @@ import './components/TodoComponents/Todo.css';
 const todolist = [
   {
     task: "Make lunches",
-    id: 1,
+    id: Date.now(),
     completed: false
   },
   {
     task: "Do Dishes",
-    id: 2,
+    id: Date.now() + 1,
     completed: false
-  },
-  {
-    task: "Take out garbage",
-    id: 3,
-    completed: false
-  },
+  }
 ];
 
 class App extends React.Component {
@@ -61,6 +56,15 @@ class App extends React.Component {
     this.setState({ currentToDoList: newList });
   };
 
+  clearComp = event => {
+    if(this.state.currentToDoList.length >= 0) {
+      const newList = this.state.currentToDoList.filter(item => item.completed !== true);
+      this.setState({ currentToDoList: newList.filter(item => item.task !=="")
+    });
+    }
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -68,13 +72,18 @@ class App extends React.Component {
           <h1>Melvin's Super Fantastical Fun List!</h1>
         </div>
         <div className="toDo-List">
-          <TodoList todolist={this.state.currentToDoList} toggleItem={this.toggleItem} />
+          <TodoList 
+          todolist={this.state.currentToDoList} 
+          toggleItem={this.toggleItem} />
         </div>
         <div className="border-line">
         <span></span>
         </div>
         <div className="toDo-Form">
-          <TodoForm addNewItem={this.addItem} />
+          <TodoForm 
+          addNewItem={this.addItem} 
+          clearCompleted={this.clearComp}
+          />
         </div>
       </div>
     );
