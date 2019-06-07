@@ -15,7 +15,8 @@ class TodoForm extends React.Component {
 
     submitHandler = event => {
         event.preventDefault()
-        // console.log("LIST ITEM PROPS", this.props)
+        console.log("LIST ITEM PROPS", this.props)
+        console.log("hello");
         this.props.addNewItem(this.state.listItem)
     }
 

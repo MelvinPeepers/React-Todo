@@ -45,6 +45,22 @@ class App extends React.Component {
     this.setState({currentToDoList: [...this.state.currentToDoList, newTodoItem]})
   }
 
+  toggleItem = id => {
+    const newList = this.state.currentToDoList.map(item => {
+      if (item.id === id) {
+        const newObj = {
+          ...item,
+          completed: !item.completed
+        };
+        return newObj;
+      } else {
+        return item;
+      }
+    });
+
+    this.setState({ currentToDoList: newList });
+  };
+
   render() {
     return (
       <div className="App">
@@ -52,7 +68,12 @@ class App extends React.Component {
           <h1>Melvin's Super Fantastical Fun List!</h1>
         </div>
         <div className="toDo-List">
-          <TodoList todolist={this.state.currentToDoList} />
+          <TodoList todolist={this.state.currentToDoList} toggleItem={this.toggleItem} />
+        </div>
+        <div className="border-line">
+        <span></span>
+        </div>
+        <div className="toDo-Form">
           <TodoForm addNewItem={this.addItem} />
         </div>
       </div>
@@ -63,5 +84,5 @@ class App extends React.Component {
 export default App;
 
 // Display the items in the Todo List. - DONE 
-// Add items to the list.
+// Add items to the list. - DONE
 // Check items off the list.
