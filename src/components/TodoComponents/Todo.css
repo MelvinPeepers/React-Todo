@@ -5,6 +5,7 @@ Colors
 #5E35B1
 #D81B60;
 #0E110D
+#191919;
 */
 * {
     box-sizing: border-box;
@@ -16,7 +17,7 @@ body {
   height: 100%;
   font-size: 62.5%;
   color: #DBF3ED;
-  background-color: #5ECEB0;
+  background-color: #191919;
   font-family: 'Titillium Web', sans-serif;
 }
 
@@ -89,7 +90,7 @@ input {
 }
 
 .add-btn {
-    background-color: #5ECEB0;
+    background-color: #191919;
     border: 1px solid #DBF3ED;
     width: 28%;
     height: 100%;
@@ -103,7 +104,7 @@ input {
 }
 
 .clear-btn {
-    background-color: #5ECEB0;
+    background-color: #191919;
     border: 1px solid #DBF3ED;
     width: 28%;
     height: 100%;
