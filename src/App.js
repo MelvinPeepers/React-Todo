@@ -71,13 +71,13 @@ class App extends React.Component {
         <div className="header">
           <h1>Melvin's Super Fantastical Fun List!</h1>
         </div>
+        <div className="border-line">
+        <span></span>
+        </div>
         <div className="toDo-List">
           <TodoList 
           todolist={this.state.currentToDoList} 
           toggleItem={this.toggleItem} />
-        </div>
-        <div className="border-line">
-        <span></span>
         </div>
         <div className="toDo-Form">
           <TodoForm 
