@@ -154,19 +154,19 @@ input {
 
 @media (max-width: 500px) {
     h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 }
 
 
 @media (max-width: 400px) {
     h1 {
-        font-size: 2.0rem;
+        font-size: 1.8rem;
     }
 
     .form-btn button {
-        font-size: 1.2rem;
-        margin-right: 5px;
+        font-size: 1.1rem;
+        margin-right: 2px;
     }
 }
 
